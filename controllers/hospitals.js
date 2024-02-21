@@ -33,7 +33,7 @@ exports.getHospital = async (req, res, next) => {
 
 //@desc     Create new hospital
 //@route    POST /api/v1/hospitals
-//@access   Public
+//@access   Private
 exports.createHospital = async (req, res, next) => {
   const hospital = await Hospital.create(req.body);
   res.status(201).json({ success: true, data: hospital });
@@ -41,7 +41,7 @@ exports.createHospital = async (req, res, next) => {
 
 //@desc     Update hospital
 //@route    PUT /api/v1/hospitals/:id
-//@access   Public
+//@access   Private
 exports.updateHospital = async (req, res, next) => {
   try {
     const hospital = await Hospital.findByIdAndUpdate(req.params.id, req.body, {
@@ -64,7 +64,7 @@ exports.updateHospital = async (req, res, next) => {
 
 //@desc     Delete hospital
 //@route    DELETE /api/v1/hospitals/:id
-//@access   Public
+//@access   Private
 exports.deleteHospital = async (req, res, next) => {
   try {
     const hospital = await Hospital.findByIdAndDelete(req.params.id);
