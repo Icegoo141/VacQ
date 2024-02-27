@@ -57,9 +57,6 @@ exports.updateHospital = async (req, res, next) => {
   } catch (err) {
     res.status(400).json({ success: false });
   }
-  res
-    .status(200)
-    .json({ success: true, msg: `Update hospital ${req.params.id}` });
 };
 
 //@desc     Delete hospital
